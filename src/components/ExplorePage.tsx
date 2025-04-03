@@ -24,6 +24,7 @@ export default function ExplorePage({
   const [suggestedTags, setSuggestedTags] = useState<string[]>([]);
   const [isSearchFocused, setIsSearchFocused] = useState(false);
   const searchRef = useRef<HTMLDivElement>(null);
+  const inputRef = useRef<HTMLInputElement>(null);
 
   useEffect(() => {
     if (searchQuery.trim() === "") {
@@ -66,8 +67,15 @@ export default function ExplorePage({
 
   const handleTagClick = (tag: string) => {
     setSearchQuery(tag);
-    // Focus remains on input after clicking a tag
-    document.getElementById("search-input")?.focus();
+    setIsSearchFocused(false);
+    inputRef.current?.blur();
+  };
+
+  const handleKeyDown = (e: React.KeyboardEvent<HTMLInputElement>) => {
+    if (e.key === "Enter") {
+      setIsSearchFocused(false);
+      inputRef.current?.blur();
+    }
   };
 
   return (
@@ -100,11 +108,13 @@ export default function ExplorePage({
           <Search className="absolute left-3 top-3 h-4 w-4 text-muted-foreground" />
           <Input
             id="search-input"
+            ref={inputRef}
             placeholder="Search by tags..."
             className="pl-10"
             value={searchQuery}
             onChange={(e) => setSearchQuery(e.target.value)}
             onFocus={() => setIsSearchFocused(true)}
+            onKeyDown={handleKeyDown}
           />
         </div>
 
