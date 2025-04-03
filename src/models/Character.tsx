@@ -26,13 +26,13 @@ export class Character {
 
   getRelevantContent(): Content[] {
     // console.log(contentList);
-    console.log(
-      contentList.filter((content) =>
-        content.tags.some((tag) => this.tags.includes(tag.tag))
-      )
-    );
+    // console.log(
+    //   contentList.filter((content) =>
+    //     content.tags.some((tag) => this.tags.includes(tag.tag))
+    //   )
+    // );
     return contentList.filter((content) =>
-      content.tags.some((tag) => this.tags.includes(tag.tag))
+      content.tags.some((tag) => this.tags.includes(tag))
     );
   }
 }

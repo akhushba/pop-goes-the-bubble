@@ -4,131 +4,76 @@ import { Character } from "./Character";
 import { Content, Tweet, Tag, Video } from "./Content";
 
 export let characters = [
-  new Character("Alice", "A curious adventurer."),
-  new Character("Bob", "A skilled mechanic."),
-  new Character("Charlie", "A mysterious stranger."),
-  new Character("Delta", "A pokemon master."),
+  new Character("Alice", "A loving mother."),
+  new Character("Bob", "A social justice warrior."),
+  new Character("Charlie", "An owner of a tech startup."),
+  new Character("Delta", "A small artist."),
+  new Character("Erwin", "An explorer."),
 ];
 
-characters[0].addInteraction("Culture", 9);
-characters[0].addInteraction("Science", 5);
-characters[1].addInteraction("Technology", 8);
-characters[1].addInteraction("Automobile", 7);
-characters[2].addInteraction("Stealth", 6);
-characters[2].addInteraction("Cybersecurity", 8);
-characters[3].addInteraction("Sports", 4);
-characters[3].addInteraction("Cringe", 90);
+characters[0].addInteraction("Conservative", 9);
+characters[0].addInteraction("Trump", 5);
+characters[0].addInteraction("Anti-Woke", 5);
+characters[1].addInteraction("Liberal", 8);
+characters[1].addInteraction("LGBTQ+ Rights", 7);
+characters[1].addInteraction("Social Justice", 9);
+characters[2].addInteraction("AI", 6);
+characters[2].addInteraction("Cryptocurrency", 8);
+characters[3].addInteraction("Anti-AI", 4);
+characters[3].addInteraction("Art", 90);
+characters[4].addInteraction("Music", 7);
+characters[4].addInteraction("Sports", 2);
+characters[4].addInteraction("Movies", 4);
+
+
 
 export const contentList: Content[] = [
+  //liberals
   new Tweet(
-    "Breaking: Market Hits Record Highs",
-    "Stock markets soar to new heights amid economic optimism.",
-    [new Tag("Finance", 7), new Tag("Stocks", 9)]
-  ),
-  new Tweet(
-    "Tech Giants Unveil New AI",
-    "Leading tech companies showcase their latest advancements in AI.",
-    [new Tag("Technology", 10), new Tag("AI", 8)]
-  ),
-  new Tweet(
-    "Climate Change Impact on Cities",
-    "Rising temperatures are reshaping urban environments.",
-    [new Tag("Environment", 6), new Tag("Climate", 7)]
-  ),
-  new Tweet(
-    "Space Exploration Update",
-    "NASA announces new mission to explore distant planets.",
-    [new Tag("Science", 9), new Tag("Space", 10)]
-  ),
-  new Tweet(
-    "Sports Championship Results",
-    "Highlights from the latest major sports event.",
-    [new Tag("Sports", 8), new Tag("Championship", 7)]
-  ),
-  new Tweet(
-    "New Breakthrough in Medicine",
-    "Scientists discover a new treatment for chronic diseases.",
-    [new Tag("Health", 9), new Tag("Medicine", 10)]
-  ),
-  new Tweet(
-    "Global Politics Shifts",
-    "Major political changes happening worldwide.",
-    [new Tag("Politics", 7), new Tag("World Tweet", 8)]
-  ),
-  new Tweet(
-    "Advancements in Renewable Energy",
-    "New solar and wind technologies set to revolutionize the industry.",
-    [new Tag("Environment", 8), new Tag("Energy", 9)]
-  ),
-  new Tweet(
-    "Cybersecurity Threats Rising",
-    "Experts warn about increasing cyber threats in 2025.",
-    [new Tag("Technology", 7), new Tag("Cybersecurity", 10)]
-  ),
-  new Tweet(
-    "Cultural Festival Highlights",
-    "A look into the latest international cultural festivals.",
-    [new Tag("Culture", 6), new Tag("Events", 7)]
+    "Justice for Cwecwe",
+    "Justice for every child who is still too young to say #MeToo - yet whose innocence was stolen.",
+    ["MeToo", "Social Justice"],
+    14
   ),
 
-  new Video(
-    "How Quantum Computing Works",
-    "A deep dive into the world of quantum computing.",
-    "https://example.com/quantum",
-    [new Tag("Technology", 9), new Tag("Science", 10)]
+  new Tweet(
+    "Equal Pay Day",
+    "It’s #EqualPayDay, y’all… and in 2025, the wage gap just got WORSE — widening for the first time in 20 years. Women still aren’t paid equally, and women of color are hit hardest. Equal work deserves equal pay.",
+    ["Social Justice", "Equality"],
+    25
   ),
-  new Video(
-    "Top 10 Travel Destinations",
-    "Explore the most breathtaking places to visit this year.",
-    "https://example.com/travel",
-    [new Tag("Travel", 8), new Tag("Adventure", 7)]
+
+  new Tweet(
+    "Report",
+    "Liberal MP Sean Casey warns that Pierre Poilievre 'doesn’t just want to cut the CBC—he wants to wipe it out.'",
+    ["Liberal", "Anti-Conservative"],
+    10
   ),
-  new Video(
-    "The Future of Electric Vehicles",
-    "Experts discuss the latest trends in electric mobility.",
-    "https://example.com/ev",
-    [new Tag("Technology", 8), new Tag("Automobile", 7)]
+
+  new Tweet(
+    "Message from Liberal Party",
+    "We cancelled the consumer carbon tax. This week, Canadians are starting to see that change at the gas pump.",
+    ["Liberal"],
+    10
   ),
-  new Video(
-    "SpaceX Launch Live",
-    "Watch the latest SpaceX rocket launch live.",
-    "https://example.com/spacex",
-    [new Tag("Science", 9), new Tag("Space", 10)]
+
+
+  
+  new Tweet(
+    "Hypocrites",
+    "Pro-choicers say stuff like 'women are not baby vending machines' but then turn around and support surrogacy for rich couples and gay men.",
+    ["Anti-Woke", "Pro-Life"],
+    6
   ),
+  
+  
+
   new Video(
-    "Healthy Eating Habits",
-    "Tips on maintaining a nutritious diet.",
-    "https://example.com/healthyeating",
-    [new Tag("Health", 9), new Tag("Lifestyle", 8)]
+    "Can 1 Woke Teen Survive 20 Trump Supporters?",
+    "Watch Dean Withers debate with 20 Trump supporters.",
+    "https://www.youtube.com/watch?v=68aej2qmCtw&ab_channel=Jubilee",
+    ["Liberal", "Anti-Trump"],
+    50
   ),
-  new Video(
-    "Greatest Football Matches",
-    "Reliving the most iconic football games in history.",
-    "https://example.com/football",
-    [new Tag("Sports", 9), new Tag("Football", 8)]
-  ),
-  new Video(
-    "AI and the Future of Work",
-    "How AI is transforming the job market.",
-    "https://example.com/aiwork",
-    [new Tag("Technology", 9), new Tag("AI", 10)]
-  ),
-  new Video(
-    "Cooking Masterclass",
-    "Learn gourmet cooking techniques from top chefs.",
-    "https://example.com/cooking",
-    [new Tag("Food", 8), new Tag("Cooking", 7)]
-  ),
-  new Video(
-    "Best Hiking Trails",
-    "Discover the most scenic hiking trails around the world.",
-    "https://example.com/hiking",
-    [new Tag("Travel", 7), new Tag("Adventure", 8)]
-  ),
-  new Video(
-    "Behind the Scenes of Movie Making",
-    "An exclusive look at how blockbuster movies are made.",
-    "https://example.com/movies",
-    [new Tag("Entertainment", 8), new Tag("Movies", 7)]
-  ),
+ 
 ];

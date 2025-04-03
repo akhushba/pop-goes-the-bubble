@@ -70,7 +70,7 @@ export default function ForYouPage({
                 </>
               ) : null}
               <div className="mt-2 text-sm text-gray-500">
-                Tags: {item.tags.map((tag) => tag.tag).join(", ")}
+                Tags: {item.tags.map((tag) => tag).join(", ")}
               </div>
             </CardContent>
           </Card>
