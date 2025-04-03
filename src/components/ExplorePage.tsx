@@ -1,9 +1,12 @@
 import { Separator } from "@/components/ui/separator";
 import { Card, CardContent } from "./ui/card";
-import { characters } from "@/models/Session";
-import { useEffect, useState } from "react";
-import { Content, Tweet, Video } from "@/models/Content";
+import { allTags, characters, contentList } from "@/models/Session";
+import { useEffect, useState, useRef } from "react";
+import { Content } from "@/models/Content";
 import { Button } from "./ui/button";
+import { Input } from "./ui/input";
+import { Search } from "lucide-react";
+import Feed from "./Feed";
 
 type ExplorePageProps = {
   currentCharacter: number;
@@ -17,10 +20,63 @@ export default function ExplorePage({
   setPage,
 }: ExplorePageProps) {
   const [currentFeed, setCurrentFeed] = useState<Content[]>([]);
+  const [searchQuery, setSearchQuery] = useState("");
+  const [suggestedTags, setSuggestedTags] = useState<string[]>([]);
+  const [isSearchFocused, setIsSearchFocused] = useState(false);
+  const searchRef = useRef<HTMLDivElement>(null);
+  const inputRef = useRef<HTMLInputElement>(null);
 
   useEffect(() => {
-    setCurrentFeed(characters[currentCharacter].getRelevantContent());
-  }, [currentCharacter]);
+    if (searchQuery.trim() === "") {
+      setCurrentFeed([]);
+      setSuggestedTags([]);
+      return;
+    }
+
+    // Filter tags that match the search query
+    const matchedTags = allTags.filter((tag) =>
+      tag.toLowerCase().includes(searchQuery.toLowerCase())
+    );
+    setSuggestedTags(matchedTags);
+
+    // Filter content that has tags matching the search query
+    const matchedContent = contentList.filter((content) =>
+      content.tags?.some((tag) =>
+        tag.toLowerCase().includes(searchQuery.toLowerCase())
+      )
+    );
+    setCurrentFeed(matchedContent);
+  }, [searchQuery]);
+
+  // Handle clicks outside the search bar to close suggestions
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      if (
+        searchRef.current &&
+        !searchRef.current.contains(event.target as Node)
+      ) {
+        setIsSearchFocused(false);
+      }
+    };
+
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, []);
+
+  const handleTagClick = (tag: string) => {
+    setSearchQuery(tag);
+    setIsSearchFocused(false);
+    inputRef.current?.blur();
+  };
+
+  const handleKeyDown = (e: React.KeyboardEvent<HTMLInputElement>) => {
+    if (e.key === "Enter") {
+      setIsSearchFocused(false);
+      inputRef.current?.blur();
+    }
+  };
 
   return (
     <div className="select-character">
@@ -46,11 +102,54 @@ export default function ExplorePage({
         </div>
       </div>
       <Separator className="my-4" />
+
+      <div className="search-bar relative mb-4" ref={searchRef}>
+        <div className="relative">
+          <Search className="absolute left-3 top-3 h-4 w-4 text-muted-foreground" />
+          <Input
+            id="search-input"
+            ref={inputRef}
+            placeholder="Search by tags..."
+            className="pl-10"
+            value={searchQuery}
+            onChange={(e) => setSearchQuery(e.target.value)}
+            onFocus={() => setIsSearchFocused(true)}
+            onKeyDown={handleKeyDown}
+          />
+        </div>
+
+        {isSearchFocused && suggestedTags.length > 0 && (
+          <Card className="absolute z-10 mt-1 w-full">
+            <CardContent className="p-2">
+              <div className="flex flex-wrap gap-2">
+                {suggestedTags.map((tag) => (
+                  <Button
+                    key={tag}
+                    variant="outline"
+                    size="sm"
+                    onClick={() => handleTagClick(tag)}
+                    className="rounded-full"
+                  >
+                    #{tag}
+                  </Button>
+                ))}
+              </div>
+            </CardContent>
+          </Card>
+        )}
+      </div>
+
       <div className="search-feed">
         {currentFeed.length > 0 ? (
-          <div>Hello World</div>
+          <Feed contentList={currentFeed} />
+        ) : searchQuery ? (
+          <div className="text-center text-muted-foreground py-8">
+            No results found for "{searchQuery}"
+          </div>
         ) : (
-          <div>please search to get started</div>
+          <div className="text-center text-muted-foreground py-8">
+            Please search to get started
+          </div>
         )}
       </div>
     </div>
