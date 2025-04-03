@@ -1,5 +1,3 @@
-import { Separator } from "@/components/ui/separator";
-import { Card, CardContent } from "./ui/card";
 import CharacterSelector from "./CharacterSelector";
 import { useState } from "react";
 import ForYouPage from "./ForYouPage";
@@ -13,7 +11,10 @@ export default function Simulation() {
         <CharacterSelector setCurrentCharacter={setCurrentCharacter} />
       )}
       {currentCharacter !== -1 && (
-        <ForYouPage currentCharacter={currentCharacter} />
+        <ForYouPage
+          currentCharacter={currentCharacter}
+          setCurrentCharacter={setCurrentCharacter}
+        />
       )}
     </div>
   );

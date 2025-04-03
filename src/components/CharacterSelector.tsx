@@ -1,6 +1,6 @@
 import { Separator } from "@/components/ui/separator";
 import { Card, CardContent } from "./ui/card";
-import { characters } from "@/models/Character";
+import { characters } from "@/models/Session";
 
 type CharacterSelectorProps = {
   setCurrentCharacter: (character: number) => void;
