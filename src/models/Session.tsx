@@ -4,10 +4,11 @@ import { Character } from "./Character";
 import { Content, Tweet, Tag, Video } from "./Content";
 
 export let characters = [
-  new Character("Alice", "A curious adventurer."),
-  new Character("Bob", "A skilled mechanic."),
-  new Character("Charlie", "A mysterious stranger."),
-  new Character("Delta", "A pokemon master."),
+  new Character("Alice", "A loving mother."),
+  new Character("Bob", "A social justice warrior."),
+  new Character("Charlie", "An owner of a tech startup."),
+  new Character("Delta", "A small artist."),
+  new Character("Erwin", "An explorer."),
 ];
 
 characters[0].addInteraction("Culture", 9);
@@ -18,6 +19,8 @@ characters[2].addInteraction("Stealth", 6);
 characters[2].addInteraction("Cybersecurity", 8);
 characters[3].addInteraction("Sports", 4);
 characters[3].addInteraction("Cringe", 90);
+characters[4].addInteraction("Sports", 7);
+
 
 export const contentList: Content[] = [
   new Tweet(
