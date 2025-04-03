@@ -25,8 +25,6 @@ characters[4].addInteraction("Music", 7);
 characters[4].addInteraction("Sports", 2);
 characters[4].addInteraction("Movies", 4);
 
-
-
 export const contentList: Content[] = [
   //liberals
   new Tweet(
@@ -57,16 +55,12 @@ export const contentList: Content[] = [
     10
   ),
 
-
-  
   new Tweet(
     "Hypocrites",
     "Pro-choicers say stuff like 'women are not baby vending machines' but then turn around and support surrogacy for rich couples and gay men.",
     ["Anti-Woke", "Pro-Life"],
     6
   ),
-  
-  
 
   new Video(
     "Can 1 Woke Teen Survive 20 Trump Supporters?",
@@ -75,5 +69,8 @@ export const contentList: Content[] = [
     ["Liberal", "Anti-Trump"],
     50
   ),
- 
 ];
+
+export const allTags = Array.from(
+  new Set(contentList.flatMap((content) => content.tags || []))
+).sort();
