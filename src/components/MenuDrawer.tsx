@@ -57,14 +57,24 @@ export function MenuDrawer({
             </DrawerClose>
           </div>
         </div>
-        <DrawerClose asChild>
-          <Button
-            variant="outline"
-            className="rounded-none border-none mt-auto"
-          >
-            Cancel
-          </Button>
-        </DrawerClose>
+        <div className="flex justify-between">
+          <DrawerClose asChild>
+            <Button
+              variant="outline"
+              className="rounded-none border-none mt-auto"
+            >
+              References
+            </Button>
+          </DrawerClose>
+          <DrawerClose asChild>
+            <Button
+              variant="outline"
+              className="rounded-none border-none mt-auto"
+            >
+              Cancel
+            </Button>
+          </DrawerClose>
+        </div>
       </DrawerContent>
     </Drawer>
   );

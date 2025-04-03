@@ -32,6 +32,7 @@ export default function ForYouPage({
       <h2 className="text-xl font-semibold">
         Curated feed for {characters[currentCharacter].name}
       </h2>
+      <div className="search-bar w-full bg-pink-200 p-2">Search</div>
       <div className="grid gap-4 mt-4">
         {currentFeed.map((item, index) => (
           <Card key={index} className="p-4">
