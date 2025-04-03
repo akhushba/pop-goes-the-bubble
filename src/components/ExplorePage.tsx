@@ -81,7 +81,16 @@ export default function ExplorePage({
   return (
     <div className="select-character">
       <div className="heading flex justify-between">
-        <h1 className="text-3xl font-bold">{`${characters[currentCharacter].name}'s Explore Page`}</h1>
+        <div className="flex gap-2">
+          <Button
+            className="profile rounded-full w-10 h-10 p-0 flex items-center justify-center bg-pink-200 hover:bg-pink-100"
+            variant="outline"
+            onClick={() => setPage(2)}
+          >
+            <span className="sr-only">Profile</span>
+          </Button>
+          <h1 className="text-3xl font-bold">{`${characters[currentCharacter].name}'s Explore Page`}</h1>
+        </div>
         <div className="flex gap-2">
           <Button
             className="search-bar p-2 text-center"
@@ -115,6 +124,8 @@ export default function ExplorePage({
             onChange={(e) => setSearchQuery(e.target.value)}
             onFocus={() => setIsSearchFocused(true)}
             onKeyDown={handleKeyDown}
+            autoComplete="off"
+            list="no-autocomplete"
           />
         </div>
 

@@ -1,27 +1,18 @@
 import { Separator } from "@/components/ui/separator";
 import { characters } from "@/models/Session";
-import { useEffect, useState } from "react";
-import { Content } from "@/models/Content";
 import { Button } from "./ui/button";
-import Feed from "./Feed";
 
-type ForYouPageProps = {
+type ProfilePageProps = {
   currentCharacter: number;
   setCurrentCharacter: (charID: number) => void;
   setPage: (pageId: number) => void;
 };
 
-export default function ForYouPage({
+export default function ProfilePage({
   currentCharacter,
   setCurrentCharacter,
   setPage,
-}: ForYouPageProps) {
-  const [currentFeed, setCurrentFeed] = useState<Content[]>([]);
-
-  useEffect(() => {
-    setCurrentFeed(characters[currentCharacter].getRelevantContent());
-  }, [currentCharacter]);
-
+}: ProfilePageProps) {
   return (
     <div className="select-character">
       <div className="heading flex justify-between">
@@ -33,7 +24,7 @@ export default function ForYouPage({
           >
             <span className="sr-only">Profile</span>
           </Button>
-          <h1 className="text-3xl font-bold">{`${characters[currentCharacter].name}'s FYP`}</h1>
+          <h1 className="text-3xl font-bold">{`${characters[currentCharacter].name}'s Profile`}</h1>
         </div>
         <div className="flex gap-2">
           <Button
@@ -55,7 +46,6 @@ export default function ForYouPage({
         </div>
       </div>
       <Separator className="my-4" />
-      <Feed contentList={currentFeed} />
     </div>
   );
 }
