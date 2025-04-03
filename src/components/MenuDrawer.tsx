@@ -8,16 +8,11 @@ import {
   DrawerContent,
   DrawerTrigger,
 } from "@/components/ui/drawer";
+import { useNavigate } from "react-router-dom";
 
-type MenuDrawerProps = {
-  setGuideIsActive: (status: boolean) => void;
-  setSimulationIsActive: (status: boolean) => void;
-};
+export function MenuDrawer() {
+  const navigate = useNavigate();
 
-export function MenuDrawer({
-  setGuideIsActive,
-  setSimulationIsActive,
-}: MenuDrawerProps) {
   return (
     <Drawer direction="left">
       <DrawerTrigger asChild>
@@ -35,10 +30,7 @@ export function MenuDrawer({
               <Button
                 variant="outline"
                 className="rounded-none"
-                onClick={() => {
-                  setSimulationIsActive(false);
-                  setGuideIsActive(true);
-                }}
+                onClick={() => navigate("/")}
               >
                 Guide
               </Button>
@@ -47,10 +39,7 @@ export function MenuDrawer({
               <Button
                 variant="outline"
                 className="rounded-none"
-                onClick={() => {
-                  setGuideIsActive(false);
-                  setSimulationIsActive(true);
-                }}
+                onClick={() => navigate("/simulation")}
               >
                 Simulation
               </Button>
@@ -62,6 +51,7 @@ export function MenuDrawer({
             <Button
               variant="outline"
               className="rounded-none border-none mt-auto"
+              onClick={() => navigate("/references")}
             >
               References
             </Button>
