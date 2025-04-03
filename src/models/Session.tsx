@@ -57,8 +57,36 @@ export const contentList: Content[] = [
     10
   ),
 
+  new Tweet(
+    "#TransDayOfVisibility",
+    "If trans people bother you more than nazis, you need to re-evaluate your life.",
+    ["LGBTQ+ Rights", "Equality"],
+    45
+  ),
 
+  new Tweet(
+    "#TransDayOfVisibility",
+    "Remembering #BriannaGhey today. Hate will never win.",
+    ["LGBTQ+ Rights", "Equality"],
+    16
+  ),
+
+  new Tweet(
+    "#TransDayOfVisibility",
+    "I am a trans man who transitioned in 1975, 50 yrs ago. Best thing I ever did",
+    ["LGBTQ+ Rights", "Equality"],
+    22
+  ),
+
+  new Tweet(
+    "#TransDayOfVisibility",
+    "I am a trans man who transitioned in 1975, 50 yrs ago. Best thing I ever did",
+    ["LGBTQ+ Rights", "Equality"],
+    22
+  ),
   
+
+  //conservatives
   new Tweet(
     "Hypocrites",
     "Pro-choicers say stuff like 'women are not baby vending machines' but then turn around and support surrogacy for rich couples and gay men.",
@@ -70,7 +98,7 @@ export const contentList: Content[] = [
 
   new Video(
     "Can 1 Woke Teen Survive 20 Trump Supporters?",
-    "Watch Dean Withers debate with 20 Trump supporters.",
+    "Watch Dean Withers debate with 20 avid Trump supporters.",
     "https://www.youtube.com/watch?v=68aej2qmCtw&ab_channel=Jubilee",
     ["Liberal", "Anti-Trump"],
     50
