@@ -127,7 +127,10 @@ export default function ExplorePage({
 
       <div className="search-feed">
         {currentFeed.length > 0 ? (
-          <Feed contentList={currentFeed} />
+          <Feed
+            contentGiven={currentFeed}
+            character={characters[currentCharacter]}
+          />
         ) : searchQuery ? (
           <div className="text-center text-muted-foreground py-8">
             No results found for "{searchQuery}"

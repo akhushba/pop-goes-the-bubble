@@ -29,7 +29,10 @@ export default function ForYouPage({
         setCurrentCharacter={setCurrentCharacter}
         setPage={setPage}
       />
-      <Feed contentList={currentFeed} />
+      <Feed
+        contentGiven={currentFeed}
+        character={characters[currentCharacter]}
+      />
     </div>
   );
 }

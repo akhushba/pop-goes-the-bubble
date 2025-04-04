@@ -49,7 +49,7 @@ const sections = [
               <li>Hover over content for more than 5 seconds: + 1 point</li>
               <li>Click: + 2 points</li>
               <li>Like: + 3 points</li>
-              <li>Watch to completion: + 5 points</li>
+              <li>Click on an associated link: + 5 points</li>
             </ul>
             <p className="mt-1">
               These interactions are tracked on your "For You" page and from
