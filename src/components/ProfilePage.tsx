@@ -16,7 +16,7 @@ export default function ProfilePage({
   setPage,
 }: ProfilePageProps) {
   return (
-    <div className="select-character">
+    <div className=" select-character">
       <CharacterNav
         characterName={characters[currentCharacter].name}
         pageName={"Profile"}

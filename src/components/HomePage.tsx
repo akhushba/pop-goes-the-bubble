@@ -3,7 +3,7 @@ import { Separator } from "@/components/ui/separator";
 
 export default function Home() {
   return (
-    <div className="max-w-3xl mx-auto p-6">
+    <div className="max-w-3xl w-2/3 mx-auto p-6">
       <h1 className="text-3xl font-bold">🫧 Pop Goes The Bubble! 🫧</h1>
       <Separator className="my-4" />
       <Card className="mb-4 border border-gray-200 bg-gray-50 shadow-sm">

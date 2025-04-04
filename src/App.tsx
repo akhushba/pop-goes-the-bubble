@@ -4,8 +4,10 @@ import { MenuDrawer } from "./components/MenuDrawer";
 function App() {
   return (
     <>
-      <MenuDrawer />
-      <Outlet />
+      <div className="flex">
+        <MenuDrawer />
+        <Outlet />
+      </div>
     </>
   );
 }

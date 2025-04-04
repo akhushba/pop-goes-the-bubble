@@ -1,5 +1,6 @@
 import { characters } from "@/models/Session";
 import { Card, CardContent } from "./ui/card";
+import { Separator } from "./ui/separator";
 
 type TagStatsProps = {
   currentCharacter: number;
@@ -15,11 +16,14 @@ const rainbowColours = [
   "hsl(0, 90%, 80%)",
   "hsl(30, 90%, 80%)",
   "hsl(60, 90%, 80%)",
+  "hsl(90, 90%, 80%)",
   "hsl(120, 90%, 80%)",
+  "hsl(150, 90%, 80%)",
   "hsl(180, 90%, 80%)",
-  "hsl(300, 90%, 80%)",
+  "hsl(210, 90%, 80%)",
   "hsl(240, 90%, 80%)",
   "hsl(270, 90%, 80%)",
+  "hsl(300, 90%, 80%)",
 ];
 
 export function TagStats({ currentCharacter }: TagStatsProps) {
@@ -37,7 +41,10 @@ export function TagStats({ currentCharacter }: TagStatsProps) {
           );
           return {
             name: t.tag,
-            colour: rainbowColours[i],
+            colour:
+              i < rainbowColours.length
+                ? rainbowColours[i]
+                : "hsl(270, 1.20%, 68.60%)",
             percentage: percent,
           } as TagStat;
         });
@@ -45,7 +52,7 @@ export function TagStats({ currentCharacter }: TagStatsProps) {
   return (
     <Card className="">
       <CardContent>
-        <h2 className="text-xl font-semibold mb-4">Content Preferences</h2>
+        <h2 className="text-xl font-semibold mb-4">Interest Scores</h2>
         {tags.length > 0 ? (
           <div className="wrapper">
             <div className="w-full bg-gray-200 rounded-full h-5 overflow-hidden border-2">
@@ -83,10 +90,11 @@ export function TagStats({ currentCharacter }: TagStatsProps) {
             preference yet.
           </div>
         )}
+        <Separator className="my-6" />
         <p className="pt-2">
-          Content preferences based off of the user interactions each tag has
-          seen and is tracked by the actions a user has taken on pots they've
-          showed interest in.
+          Interest is based off of the user interactions each tag has seen and
+          is tracked by the actions a user has taken on pots they've showed
+          interest in.
         </p>
       </CardContent>
     </Card>

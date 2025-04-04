@@ -7,7 +7,7 @@ export let characters = [
   new Character("Alice", "A loving mother."),
   new Character("Bob", "A social justice warrior."),
   new Character("Charlie", "An owner of a tech startup."),
-  new Character("Delta", "A small artist."),
+  new Character("David", "A small artist."),
   new Character("Erwin", "An explorer."),
 ];
 
@@ -78,7 +78,6 @@ export const contentList: Content[] = [
     ["Social Justice", "Equality"],
     25
   ),
-
 
   new Tweet(
     "Message from Liberal Party",
@@ -173,11 +172,6 @@ export const contentList: Content[] = [
     ["Anti-Musk", "Social Justice"],
     44
   ),
- 
-
-
-
-  
 
   //conservatives
   new Tweet(
@@ -219,7 +213,6 @@ export const contentList: Content[] = [
     32
   ),
 
-  
   new Video(
     "Go Woke Go Broke",
     "The fall of mighty brands to the woke agenda",
@@ -258,10 +251,10 @@ export const contentList: Content[] = [
     50
   ),
 
-  new Tweet( 
-    "GOD IS GOOD", 
-    "HOLY SH*T 🚨 The BLM Mural Painted is officially gone. The DC Mayor caved and Trump won big 🔥 THIS IS WHAT I VOTED FOR", 
-    ["Anti-Woke", "MAGA", "Conservative"], 
+  new Tweet(
+    "GOD IS GOOD",
+    "HOLY SH*T 🚨 The BLM Mural Painted is officially gone. The DC Mayor caved and Trump won big 🔥 THIS IS WHAT I VOTED FOR",
+    ["Anti-Woke", "MAGA", "Conservative"],
     32
   ),
 
@@ -296,11 +289,11 @@ export const contentList: Content[] = [
     18
   ),
 
-  new Tweet( 
-    "About Time", 
-    "BLM Plaza is officially gone 🥳", 
-    ["Anti-Woke", "MAGA"], 
-    45 
+  new Tweet(
+    "About Time",
+    "BLM Plaza is officially gone 🥳",
+    ["Anti-Woke", "MAGA"],
+    45
   ),
 
   new Tweet(
@@ -356,10 +349,10 @@ export const contentList: Content[] = [
     22
   ),
 
-  new Tweet( 
-    "Shut Up!", 
-    "So STOP it with the 'my body, my choice' garbage! 😐 It's simply NOT TRUE!", 
-    ["Anti-Woke", "Pro-Life", "Conservative"], 
+  new Tweet(
+    "Shut Up!",
+    "So STOP it with the 'my body, my choice' garbage! 😐 It's simply NOT TRUE!",
+    ["Anti-Woke", "Pro-Life", "Conservative"],
     16
   ),
 
@@ -378,14 +371,13 @@ export const contentList: Content[] = [
     17
   ),
 
-
-  new Tweet( 
-    "Diversity is a holding us back", 
-    "Back in 1955, Walt Disney didn't care about DEI. He gave an ex-SS Officer from Nazi Germany a platform to educate White America about space exploration. 14 years later, two white men walked on the moon. Imagine what we can do once diversity, inclusion & equity is buried for good.", 
-    ["Anti-Woke", "Conservative", "MAGA"], 
+  new Tweet(
+    "Diversity is a holding us back",
+    "Back in 1955, Walt Disney didn't care about DEI. He gave an ex-SS Officer from Nazi Germany a platform to educate White America about space exploration. 14 years later, two white men walked on the moon. Imagine what we can do once diversity, inclusion & equity is buried for good.",
+    ["Anti-Woke", "Conservative", "MAGA"],
     32
   ),
-  
+
   new Tweet(
     "Vote Conservative",
     "With or without the Americans, we will rebuild Canada's economy after the Lost Liberal Decade to become a strong, sovereign, and united country that stands on our own two feet. That can only happen if you vote for change. Vote to put Canada First. Vote Conservative.",
@@ -393,11 +385,7 @@ export const contentList: Content[] = [
     15
   ),
 
-
-
-
-
-  //techbro 
+  //techbro
 
   new Video(
     "Googles AI Innovations",
@@ -407,10 +395,10 @@ export const contentList: Content[] = [
     37
   ),
 
-  new Tweet( 
-    "Wall Street’s performance in 2025 under Trump’s chaos and failed economic policies:", 
-    "Dow down 2.3%, S&P 500 down, 5.2% Nasdaq down 10.3%, Russell 2000 down 9.3%, Bitcoin down 11.8%. This is what “business genius” looks like?", 
-    ["Anti-Trump", "Bitcoin", "Cryptocurrency"], 
+  new Tweet(
+    "Wall Street’s performance in 2025 under Trump’s chaos and failed economic policies:",
+    "Dow down 2.3%, S&P 500 down, 5.2% Nasdaq down 10.3%, Russell 2000 down 9.3%, Bitcoin down 11.8%. This is what “business genius” looks like?",
+    ["Anti-Trump", "Bitcoin", "Cryptocurrency"],
     23
   ),
 
@@ -437,7 +425,6 @@ export const contentList: Content[] = [
     ["AI", "Technology", "Environmental Impact"],
     12
   ),
-
 
   new Video(
     "New Tech Trends",
@@ -475,7 +462,7 @@ export const contentList: Content[] = [
     "Tech Tips!",
     "If you are a startup founder and want to never run out of cash, save these 8 lead generation pillars and 24 tools",
     "https://x.com/natiakourdadze/status/1905122798126735556",
-    ["SaaS", "Tech Startup", "Technology",],
+    ["SaaS", "Tech Startup", "Technology"],
     26
   ),
 
@@ -503,10 +490,10 @@ export const contentList: Content[] = [
     19
   ),
 
-  new Tweet( 
-    "OpenAI Academy just launched", 
-    "Learn AI for free at: http://academy.openai.com", 
-    ["AI", "OpenAI", "Technology", "Tips"], 
+  new Tweet(
+    "OpenAI Academy just launched",
+    "Learn AI for free at: http://academy.openai.com",
+    ["AI", "OpenAI", "Technology", "Tips"],
     39
   ),
 
@@ -603,7 +590,6 @@ export const contentList: Content[] = [
     ["SaaS", "Tech Startup"],
     41
   ),
-
 
   //artist
 
@@ -751,7 +737,7 @@ export const contentList: Content[] = [
     "whoops!",
     "spilled coffee on a page and drew what i saw",
     "https://x.com/wingsseni/status/1905743720517177824",
-    ["Art",],
+    ["Art"],
     34
   ),
 
@@ -762,7 +748,6 @@ export const contentList: Content[] = [
     ["Art", "Fanart"],
     31
   ),
-
 
   new Video(
     "Every Artist NEEDS to know about this!【Protect your Art from AI】",
@@ -827,109 +812,85 @@ export const contentList: Content[] = [
     47
   ),
 
+  //neutral?
 
+  new Tweet(
+    "NEW: Oil lobbyists are trying to get Congress and Trump to give them legal immunity against climate lawsuits.",
+    "They know they're responsible for billions of dollars in damage and countless lives lost — so they are buy themselves out of liability.",
+    ["Environmental Impact", "Climate Action"],
+    16
+  ),
 
+  new Video(
+    "Can 1 Woke Teen Survive 20 Trump Supporters?",
+    "Will Dean Withers hold his ground or will Trump supporters dominate?",
+    "https://www.youtube.com/watch?v=68aej2qmCtw&ab_channel=Jubilee",
+    ["Liberal", "Trump"],
+    50
+  ),
 
+  new Video(
+    "A new study is turning the energy debate on its head, showing the massive benefits of transitioning to renewable energy sources such as solar, wind, and hydro",
+    "Much better for planet as well as more financially rewarding for investors and the economy.",
+    "https://x.com/mzjacobson/status/1903597638144176269",
+    ["Environmental Impact", "Technology"],
+    29
+  ),
 
+  new Video(
+    "Luigi Mangione",
+    "United Healthcare CEO Shot In Public, But Nation Wants Killer Freed: EVERYTHING We Know So Far",
+    "https://www.youtube.com/watch?v=qMicOCInhLI&ab_channel=RottenMango",
+    ["Luigi Mangione", "Health Care", "Social Justice"],
+    34
+  ),
 
+  new Video(
+    "Project 2025",
+    "How Trump’s Policies Align With Project 2025: A Comparison | WSJ",
+    "https://www.youtube.com/watch?v=8qaEDlu2NQg&ab_channel=TheWallStreetJournal ",
+    ["Trump", "Anti-Trump", "Project 2025", "Conservative", "Liberal"],
+    61
+  ),
 
+  new Tweet(
+    "Need reasons to hate AI?",
+    "AI's projected water usage could hit 6.6 billion m³ by 2027. it relies on Black slave labor to be trained. it’s already been used to further the surveillance police state (Clearview). it produces so much carbon emissions that Google rescinded its promise of carbon neutrality.",
+    ["Environmental Impact", "Anti-AI", "Google"],
+    31
+  ),
 
+  new Video(
+    "Free Luigi Rally",
+    "Crowd gathers to demand for the release of Luigi Mangione, the United Healthcare CEO shooter",
+    "https://www.youtube.com/watch?v=iFAKkquGTxs&ab_channel=Channel5withAndrewCallaghan",
+    ["Luigi Mangione", "Health Care", "Social Justice"],
+    34
+  ),
 
+  new Video(
+    "12 Cheap & Easy Tips for Reducing Your Waste",
+    "We're sharing a dozen cheap and easy tips to help beginners reduce their garbage output and transition to a low waste, or zero waste lifestyle.",
+    "https://www.youtube.com/watch?v=K9ojpJBSTw8",
+    ["Zero Waste", "Tips"],
+    32
+  ),
 
+  new Video(
+    "Oil giant's leaked data reveals 'awful' pollution | BBC News",
+    "Colombian energy giant Ecopetrol has polluted hundreds of sites with oil, including water sources and biodiverse wetlands, BBC Eye has found.",
+    "https://www.youtube.com/watch?v=ogdMLaTZG3c",
+    ["Big Corporations", "News"],
+    25
+  ),
 
-
-
-
-
-
-
-
-
-
- //neutral?
-
- new Tweet(
-  "NEW: Oil lobbyists are trying to get Congress and Trump to give them legal immunity against climate lawsuits.",
-  "They know they're responsible for billions of dollars in damage and countless lives lost — so they are buy themselves out of liability.",
-  ["Environmental Impact", "Climate Action"],
-  16
-),
-
- new Video(
-  "Can 1 Woke Teen Survive 20 Trump Supporters?",
-  "Will Dean Withers hold his ground or will Trump supporters dominate?",
-  "https://www.youtube.com/watch?v=68aej2qmCtw&ab_channel=Jubilee",
-  ["Liberal", "Trump"],
-  50
-),
-
-new Video(
-  "A new study is turning the energy debate on its head, showing the massive benefits of transitioning to renewable energy sources such as solar, wind, and hydro",
-  "Much better for planet as well as more financially rewarding for investors and the economy.",
-  "https://x.com/mzjacobson/status/1903597638144176269",
-  ["Environmental Impact", "Technology"],
-  29
-),
-
-new Video(
-  "Luigi Mangione",
-  "United Healthcare CEO Shot In Public, But Nation Wants Killer Freed: EVERYTHING We Know So Far",
-  "https://www.youtube.com/watch?v=qMicOCInhLI&ab_channel=RottenMango",
-  ["Luigi Mangione", "Health Care", "Social Justice"],
-  34
-),
-
-new Video(
-  "Project 2025",
-  "How Trump’s Policies Align With Project 2025: A Comparison | WSJ",
-  "https://www.youtube.com/watch?v=8qaEDlu2NQg&ab_channel=TheWallStreetJournal ",
-  ["Trump", "Anti-Trump", "Project 2025", "Conservative", "Liberal"],
-  61
-),
-
-new Tweet(
-  "Need reasons to hate AI?",
-  "AI's projected water usage could hit 6.6 billion m³ by 2027. it relies on Black slave labor to be trained. it’s already been used to further the surveillance police state (Clearview). it produces so much carbon emissions that Google rescinded its promise of carbon neutrality.",
-  ["Environmental Impact", "Anti-AI", "Google"],
-  31
-),
-
-new Video(
-  "Free Luigi Rally",
-  "Crowd gathers to demand for the release of Luigi Mangione, the United Healthcare CEO shooter",
-  "https://www.youtube.com/watch?v=iFAKkquGTxs&ab_channel=Channel5withAndrewCallaghan",
-  ["Luigi Mangione", "Health Care", "Social Justice"],
-  34
-),
-
-new Video(
-  "12 Cheap & Easy Tips for Reducing Your Waste",
-  "We're sharing a dozen cheap and easy tips to help beginners reduce their garbage output and transition to a low waste, or zero waste lifestyle.",
-  "https://www.youtube.com/watch?v=K9ojpJBSTw8",
-  ["Zero Waste", "Tips",],
-  32
-),
-
-new Video(
-  "Oil giant's leaked data reveals 'awful' pollution | BBC News",
-  "Colombian energy giant Ecopetrol has polluted hundreds of sites with oil, including water sources and biodiverse wetlands, BBC Eye has found.",
-  "https://www.youtube.com/watch?v=ogdMLaTZG3c",
-  ["Big Corporations", "News",],
-  25
-),
-
-new Video(
-  "Can clean energy handle the AI boom?",
-  "How our digital lives are impacting our climate goals.",
-  "https://www.youtube.com/watch?v=YGfJeH5HRDQ",
-  ["Environmental Impact", "AI", "Technology", "Climate Action"],
-  17
-),
-
-
-
-
-  
+  new Video(
+    "Can clean energy handle the AI boom?",
+    "How our digital lives are impacting our climate goals.",
+    "https://www.youtube.com/watch?v=YGfJeH5HRDQ",
+    ["Environmental Impact", "AI", "Technology", "Climate Action"],
+    17
+  ),
 ];
 
 export const allTags = Array.from(

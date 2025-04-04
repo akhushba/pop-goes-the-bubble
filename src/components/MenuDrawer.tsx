@@ -1,6 +1,5 @@
 "use client";
 
-import * as React from "react";
 import { Button } from "@/components/ui/button";
 import {
   Drawer,
@@ -16,8 +15,11 @@ export function MenuDrawer() {
   return (
     <Drawer direction="left">
       <DrawerTrigger asChild>
-        <Button variant="outline" className="text-2xl">
-          {"\u2630"}
+        <Button
+          variant="outline"
+          className="text-3xl fixed top-0 left-0 z-50 h-[100vh] pr-2 rounded-none"
+        >
+          {"\u232a"}
         </Button>
       </DrawerTrigger>
       <DrawerContent className="w-64 flex flex-col h-full">

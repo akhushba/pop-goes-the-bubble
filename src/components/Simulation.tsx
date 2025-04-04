@@ -9,7 +9,7 @@ export default function Simulation() {
   const [page, setPage] = useState(0);
 
   return (
-    <div className="max-w-3xl mx-auto p-6">
+    <div className="max-w-3xl w-2/3 mx-auto p-6">
       {currentCharacter === -1 && (
         <CharacterSelector setCurrentCharacter={setCurrentCharacter} />
       )}

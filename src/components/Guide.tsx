@@ -412,7 +412,7 @@ export default function Guide() {
   };
 
   return (
-    <div className="max-w-3xl mx-auto p-6">
+    <div className="max-w-3xl w-2/3 mx-auto p-6">
       <h1 className="text-3xl font-bold">Pop Goes The Bubble Info Guide</h1>
       <Separator className="my-4" />
       {sections.map((section, index) => (
