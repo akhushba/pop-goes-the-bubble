@@ -1,6 +1,7 @@
 import { characters } from "@/models/Session";
 import { Card, CardContent } from "./ui/card";
 import { Separator } from "./ui/separator";
+import { useEffect, useState } from "react";
 
 type TagStatsProps = {
   currentCharacter: number;
@@ -27,27 +28,28 @@ const rainbowColours = [
 ];
 
 export function TagStats({ currentCharacter }: TagStatsProps) {
-  const interactionCount = characters[currentCharacter].interactedTags.reduce(
-    (total, tag) => total + tag.interactions,
-    0
-  );
+  const [tags, setTags] = useState<TagStat[]>([]);
 
-  const tags =
-    interactionCount < 5
-      ? []
-      : characters[currentCharacter].interactedTags.map((t, i) => {
-          const percent = ((t.interactions / interactionCount) * 100).toFixed(
-            2
-          );
-          return {
-            name: t.tag,
-            colour:
-              i < rainbowColours.length
-                ? rainbowColours[i]
-                : "hsl(270, 1.20%, 68.60%)",
-            percentage: percent,
-          } as TagStat;
-        });
+  useEffect(() => {
+    const interactionCount = characters[currentCharacter].interactedTags.reduce(
+      (total, tag) => total + tag.interactions,
+      0
+    );
+
+    setTags(
+      characters[currentCharacter].interactedTags.map((t, i) => {
+        const percent = ((t.interactions / interactionCount) * 100).toFixed(2);
+        return {
+          name: t.tag,
+          colour:
+            i < rainbowColours.length
+              ? rainbowColours[i]
+              : "hsl(270, 1.20%, 68.60%)",
+          percentage: percent,
+        } as TagStat;
+      })
+    );
+  }, [currentCharacter]);
 
   return (
     <Card className="">
@@ -69,18 +71,20 @@ export function TagStats({ currentCharacter }: TagStatsProps) {
                 ))}
               </div>
             </div>
-            <div className="flex justify-center items-center text-xs font-semibold h-9 pb-1 rounded mt-3">
+            <div className="flex flex-wrap justify-center gap-2 mt-3">
               {tags.map((lang) => (
-                <span key={lang.name} className="px-1 relative inline-block">
-                  {lang.name} {lang.percentage}%
-                  <span
-                    className="absolute left-1 right-1 h-2 border-2 border-gray-300"
-                    style={{
-                      backgroundColor: lang.colour,
-                      bottom: "-0.5rem",
-                    }}
+                <div
+                  key={lang.name}
+                  className="flex items-center px-2 py-1 rounded text-xs font-semibold"
+                  style={{ backgroundColor: `${lang.colour}40` }}
+                >
+                  <div
+                    className="mr-1 w-3 h-3 rounded-full border border-gray-300"
+                    style={{ backgroundColor: lang.colour }}
                   />
-                </span>
+                  <span className="mr-1">{lang.name}</span>
+                  <span>{lang.percentage}%</span>
+                </div>
               ))}
             </div>
           </div>

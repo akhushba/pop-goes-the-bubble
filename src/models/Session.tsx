@@ -1,7 +1,7 @@
 // setup for simulation
 
 import { Character } from "./Character";
-import { Content, Tweet, Tag, Video } from "./Content";
+import { Content, Tweet, Video } from "./Content";
 
 export let characters = [
   new Character("Alice", "A loving mother."),
