@@ -23,9 +23,26 @@ export class Character {
       this.tags.push(tag);
     }
   }
+
   getRelevantContent(): Content[] {
-    return contentList.filter((content) =>
-      content.tags.some((tag) => this.tags.includes(tag))
-    );
+    // Create a map of tag to interaction count for quick lookup
+    const tagInteractionMap = new Map<string, number>();
+    this.interactedTags.forEach((tag) => {
+      tagInteractionMap.set(tag.tag, tag.interactions);
+    });
+
+    return contentList
+      .filter((content) => content.tags.some((tag) => this.tags.includes(tag)))
+      .sort((a, b) => {
+        const aScore = a.tags.reduce((sum, tag) => {
+          return sum + (tagInteractionMap.get(tag) || 0);
+        }, 0);
+
+        const bScore = b.tags.reduce((sum, tag) => {
+          return sum + (tagInteractionMap.get(tag) || 0);
+        }, 0);
+
+        return bScore - aScore;
+      });
   }
 }

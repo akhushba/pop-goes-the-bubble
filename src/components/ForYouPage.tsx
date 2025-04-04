@@ -30,7 +30,7 @@ export default function ForYouPage({
         setPage={setPage}
       />
       <Feed
-        contentGiven={currentFeed}
+        contentGiven={currentFeed.slice(0, 10)}
         character={characters[currentCharacter]}
       />
     </div>
