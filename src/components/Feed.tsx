@@ -23,7 +23,7 @@ export default function Feed({ contentList }: FeedProps) {
                   rel="noopener noreferrer"
                   className="text-blue-500 underline"
                 >
-                  Watch Video
+                  Click to see more!
                 </a>
               </>
             ) : null}
