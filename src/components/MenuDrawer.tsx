@@ -25,13 +25,13 @@ export function MenuDrawer() {
       <DrawerContent className="w-64 flex flex-col h-full">
         <div className="flex-grow">
           <h1 className="menu-info text-xl font-bold w-full text-center my-4">
-            Select Page
+            🫧 Pop Goes The Bubble! 🫧
           </h1>
-          <div className="menu-wrapper flex flex-col gap-2">
+          <div className="menu-wrapper flex flex-col">
             <DrawerClose asChild>
               <Button
                 variant="outline"
-                className="rounded-none"
+                className="rounded-none text-md py-8"
                 onClick={() => navigate("/")}
               >
                 Home
@@ -40,7 +40,7 @@ export function MenuDrawer() {
             <DrawerClose asChild>
               <Button
                 variant="outline"
-                className="rounded-none"
+                className="rounded-none text-md py-8"
                 onClick={() => navigate("/guide")}
               >
                 Guide
@@ -49,7 +49,7 @@ export function MenuDrawer() {
             <DrawerClose asChild>
               <Button
                 variant="outline"
-                className="rounded-none"
+                className="rounded-none text-md py-8"
                 onClick={() => navigate("/simulation")}
               >
                 Simulation
@@ -61,7 +61,7 @@ export function MenuDrawer() {
           <DrawerClose asChild>
             <Button
               variant="outline"
-              className="rounded-none border-none mt-auto"
+              className="rounded-none mt-auto text-md flex-1"
               onClick={() => navigate("/references")}
             >
               References
@@ -70,7 +70,7 @@ export function MenuDrawer() {
           <DrawerClose asChild>
             <Button
               variant="outline"
-              className="rounded-none border-none mt-auto"
+              className="rounded-none mt-auto text-md flex-1"
             >
               Cancel
             </Button>
