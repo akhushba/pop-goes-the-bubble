@@ -11,7 +11,7 @@ export default function CharacterSelector({
 }: CharacterSelectorProps) {
   return (
     <div className="select-character">
-      <h1 className="text-3xl font-bold">Pick a character</h1>
+      <h1 className="text-3xl font-bold">Pick a Character</h1>
       <Separator className="my-4" />
       <div className="grid grid-cols-2 gap-4">
         {characters.map((character, index) => (

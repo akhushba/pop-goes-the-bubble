@@ -32,6 +32,15 @@ export function MenuDrawer() {
                 className="rounded-none"
                 onClick={() => navigate("/")}
               >
+                Home
+              </Button>
+            </DrawerClose>
+            <DrawerClose asChild>
+              <Button
+                variant="outline"
+                className="rounded-none"
+                onClick={() => navigate("/guide")}
+              >
                 Guide
               </Button>
             </DrawerClose>
