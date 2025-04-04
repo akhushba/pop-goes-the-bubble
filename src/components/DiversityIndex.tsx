@@ -72,7 +72,7 @@ export function DiversityIndex({ currentCharacter }: DiversityIndexProps) {
         <Separator className="my-4" />
         <p className="pt-2">
           The diversity index is how much the user has interacted with a
-          different variety of posts on the platform, and if they're preferences
+          different variety of posts on the platform, and if their preferences
           are high skewed to one end of the platform.
         </p>
       </CardContent>

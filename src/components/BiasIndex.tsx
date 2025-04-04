@@ -86,13 +86,15 @@ export function BiasIndex({ currentCharacter }: BiasIndexProps) {
             </div>
             {extremeContentInteractions.length > 0 ? (
               <div>
-                You've engaged with the following extreme content:
+                The user has engaged with the following extreme content:
                 {extremeContentInteractions.map((content) => (
                   <p className="pl-4">• {content} content</p>
                 ))}
               </div>
             ) : (
-              <div>You've not currently engaged with any extreme content.</div>
+              <div>
+                The user has not currently engaged with any extreme content.
+              </div>
             )}
           </div>
         ) : (
@@ -101,8 +103,8 @@ export function BiasIndex({ currentCharacter }: BiasIndexProps) {
         <Separator className="my-4" />
         <div className="space-y-2 text-sm">
           <p>• Higher scores indicate stronger content bias</p>
-          <p>• Scores increase when you focus on few content types</p>
-          <p>• Scores decrease when you explore diverse content</p>
+          <p>• Score increases when a user focuses on few content types</p>
+          <p>• Score decreases when a user explore diverse content</p>
           <p>• Extreme content interactions increase bias score</p>
         </div>
       </CardContent>
