@@ -23,16 +23,9 @@ export class Character {
       this.tags.push(tag);
     }
   }
-
   getRelevantContent(): Content[] {
-    // console.log(contentList);
-    console.log(
-      contentList.filter((content) =>
-        content.tags.some((tag) => this.tags.includes(tag.tag))
-      )
-    );
     return contentList.filter((content) =>
-      content.tags.some((tag) => this.tags.includes(tag.tag))
+      content.tags.some((tag) => this.tags.includes(tag))
     );
   }
 }

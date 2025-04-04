@@ -1,35 +1,33 @@
 import { characters } from "@/models/Session";
-import { useEffect, useState } from "react";
-import { Content } from "@/models/Content";
-import Feed from "./Feed";
+import { TagStats } from "./TagStats";
 import { CharacterNav } from "./CharacterNav";
+import { DiversityIndex } from "./DiversityIndex";
+import { BiasIndex } from "./BiasIndex";
 
-type ForYouPageProps = {
+type ProfilePageProps = {
   currentCharacter: number;
   setCurrentCharacter: (charID: number) => void;
   setPage: (pageId: number) => void;
 };
 
-export default function ForYouPage({
+export default function ProfilePage({
   currentCharacter,
   setCurrentCharacter,
   setPage,
-}: ForYouPageProps) {
-  const [currentFeed, setCurrentFeed] = useState<Content[]>([]);
-
-  useEffect(() => {
-    setCurrentFeed(characters[currentCharacter].getRelevantContent());
-  }, [currentCharacter]);
-
+}: ProfilePageProps) {
   return (
     <div className="select-character">
       <CharacterNav
         characterName={characters[currentCharacter].name}
-        pageName={"FYP"}
+        pageName={"Profile"}
         setCurrentCharacter={setCurrentCharacter}
         setPage={setPage}
       />
-      <Feed contentList={currentFeed} />
+      <div className="content-wrapper flex flex-col gap-4">
+        <TagStats currentCharacter={currentCharacter} />
+        <DiversityIndex currentCharacter={currentCharacter} />
+        <BiasIndex currentCharacter={currentCharacter} />
+      </div>
     </div>
   );
 }

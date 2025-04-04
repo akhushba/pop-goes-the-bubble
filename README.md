@@ -1,54 +1,60 @@
-# React + TypeScript + Vite
+# Pop Goes the Bubble
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+[![Node.js Version](https://img.shields.io/badge/node-%3E%3D16.0.0-brightgreen)](https://nodejs.org/)
+[![npm Version](https://img.shields.io/badge/npm-%3E%3D7.0.0-blue)](https://www.npmjs.com/)
 
-Currently, two official plugins are available:
+An interactive website exploring social media filter bubbles and their societal impacts.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Table of Contents
 
-## Expanding the ESLint configuration
+- [Features](#features)
+- [Install](#install)
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+## Features
 
-```js
-export default tseslint.config({
-  extends: [
-    // Remove ...tseslint.configs.recommended and replace with this
-    ...tseslint.configs.recommendedTypeChecked,
-    // Alternatively, use this for stricter rules
-    ...tseslint.configs.strictTypeChecked,
-    // Optionally, add this for stylistic rules
-    ...tseslint.configs.stylisticTypeChecked,
-  ],
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
+✨ **Multiple Perspectives**  
+Experience social media through different political viewpoints
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+🔍 **Interactive Exploration**  
+Search and filter content by tags to see how algorithms shape feeds
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+📊 **Educational Content**  
+Learn about filter bubbles and their psychological effects
 
-export default tseslint.config({
-  plugins: {
-    // Add the react-x and react-dom plugins
-    'react-x': reactX,
-    'react-dom': reactDom,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended typescript rules
-    ...reactX.configs['recommended-typescript'].rules,
-    ...reactDom.configs.recommended.rules,
-  },
-})
-```
+🔄 **Real-time Simulation**  
+Watch how content recommendations change based on your interactions
+
+## Install
+
+### Prerequisites
+
+On Mac I'd reccomend using homebrew to install everything:
+
+- Node.js (v16 or higher)
+- npm (v7 or higher)
+- Git
+
+### Steps
+
+In your local terminal
+
+1. **Clone the repository**:
+   ```bash
+   git clone https://github.com/akhushba/pop-goes-the-bubble.git
+   ```
+2. **Navigate to project directory**:
+   ```bash
+   cd pop-goes-the-bubble
+   ```
+3. **Install dependencies**:
+   ```bash
+   npm install
+   ```
+4. **Run the website**:
+   ```bash
+   npm run dev
+   ```
+5. **Open the website directly**:
+   ```bash
+   o
+   ```
