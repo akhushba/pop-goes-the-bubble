@@ -50,7 +50,7 @@ export function DiversityIndex({ currentCharacter }: DiversityIndexProps) {
     }
 
     setDiversityIndex(diversityScore.toString());
-  }, [currentCharacter]);
+  }, [currentCharacter, characters[currentCharacter].interactedTags]);
 
   return (
     <Card className="">

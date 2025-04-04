@@ -59,6 +59,8 @@ export default function ExplorePage({
       }
     };
 
+    console.log(allTags);
+
     document.addEventListener("mousedown", handleClickOutside);
     return () => {
       document.removeEventListener("mousedown", handleClickOutside);

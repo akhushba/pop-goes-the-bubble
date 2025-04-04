@@ -897,4 +897,71 @@ export const allTags = Array.from(
   new Set(contentList.flatMap((content) => content.tags || []))
 ).sort();
 
+export const tagCategories = [
+  // Technology & AI
+  { tag: "AI", category: "Technology & AI" },
+  { tag: "AI Art", category: "Technology & AI" },
+  { tag: "Glaze", category: "Technology & AI" },
+  { tag: "Nightshade", category: "Technology & AI" },
+  { tag: "OpenAI", category: "Technology & AI" },
+  { tag: "Technology", category: "Technology & AI" },
+  { tag: "Tech Startup", category: "Technology & AI" },
+  { tag: "SaaS", category: "Technology & AI" },
+  { tag: "Anti-AI", category: "Technology & AI" },
+  { tag: "Amazon", category: "Technology & AI" },
+  { tag: "Bitcoin", category: "Technology & AI" },
+  { tag: "Cryptocurrency", category: "Technology & AI" },
+  { tag: "Tiktok", category: "Technology & AI" },
+  { tag: "Google", category: "Technology & AI" },
+
+  // Art & Creativity
+  { tag: "Art", category: "Art & Creativity" },
+  { tag: "Animation", category: "Art & Creativity" },
+  { tag: "Art Tutorial", category: "Art & Creativity" },
+  { tag: "Commission", category: "Art & Creativity" },
+  { tag: "Fanart", category: "Art & Creativity" },
+  { tag: "Inktober", category: "Art & Creativity" },
+  { tag: "Speedpaint", category: "Art & Creativity" },
+  { tag: "WIP", category: "Art & Creativity" },
+
+  // --  BREAK DOWN
+  // Politics & Ideology
+  { tag: "Anti-Liberal", category: "Politics & Ideology" },
+  { tag: "Anti-Trump", category: "Politics & Ideology" },
+  { tag: "Anti-Woke", category: "Politics & Ideology" },
+  { tag: "Conservative", category: "Politics & Ideology" },
+  { tag: "Liberal", category: "Politics & Ideology" },
+  { tag: "MAGA", category: "Politics & Ideology" },
+  { tag: "Project 2025", category: "Politics & Ideology" },
+  { tag: "Trump", category: "Politics & Ideology" },
+  { tag: "Fox News", category: "Politics & Ideology" },
+  // Social Issues
+  { tag: "Equality", category: "Social Issues" },
+  { tag: "LGBTQ+ Rights", category: "Social Issues" },
+  { tag: "MeToo", category: "Social Issues" },
+  { tag: "Pro-Choice", category: "Social Issues" },
+  { tag: "Pro-Life", category: "Social Issues" },
+  { tag: "Social Justice", category: "Social Issues" },
+  { tag: "Elon Musk", category: "People" },
+  { tag: "Mark Carney", category: "People" },
+  { tag: "Pierre Poilievre", category: "People" },
+
+  // Environment
+  { tag: "Climate Action", category: "Environment" },
+  { tag: "Climate Change", category: "Environment" },
+  { tag: "Environmental Impact", category: "Environment" },
+  { tag: "Zero Waste", category: "Environment" },
+
+  // Media & Content
+  { tag: "Comedy", category: "Media & Content" },
+  { tag: "News", category: "Media & Content" },
+  { tag: "Reaction", category: "Media & Content" },
+  { tag: "Tips", category: "Media & Content" },
+  { tag: "Tesla", category: "Media & Content" },
+  { tag: "Big Corporations", category: "Media & Content" },
+  { tag: "Tariff", category: "Media & Content" },
+  { tag: "Luigi Mangione", category: "Media & Content" },
+  { tag: "Health Care", category: "Media & Content" },
+];
+
 export const extremeTags = ["Anti-Woke"];
