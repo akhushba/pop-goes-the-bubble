@@ -74,3 +74,5 @@ export const contentList: Content[] = [
 export const allTags = Array.from(
   new Set(contentList.flatMap((content) => content.tags || []))
 ).sort();
+
+export const extremeTags = ["Anti-Woke"];
