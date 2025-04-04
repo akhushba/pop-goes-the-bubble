@@ -25,6 +25,9 @@ export default function ReferencePage() {
                   <TableHead className="w-[300px] break-words whitespace-normal">
                     Author(s)
                   </TableHead>
+                  <TableHead className="w-[100px] break-words whitespace-normal">
+                    Year
+                  </TableHead>
                   <TableHead className="w-[300px] break-words whitespace-normal">
                     Title
                   </TableHead>
@@ -38,6 +41,9 @@ export default function ReferencePage() {
                   <TableRow key={index}>
                     <TableCell className="w-[300px] break-words whitespace-normal">
                       {ref.authors}
+                    </TableCell>
+                    <TableCell className="w-[100px] break-words whitespace-normal">
+                      {ref.year}
                     </TableCell>
                     <TableCell className="w-[300px] break-words whitespace-normal">
                       {ref.title}
