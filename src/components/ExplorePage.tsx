@@ -1,4 +1,3 @@
-import { Separator } from "@/components/ui/separator";
 import { Card, CardContent } from "./ui/card";
 import { allTags, characters, contentList } from "@/models/Session";
 import { useEffect, useState, useRef } from "react";
@@ -7,6 +6,7 @@ import { Button } from "./ui/button";
 import { Input } from "./ui/input";
 import { Search } from "lucide-react";
 import Feed from "./Feed";
+import { CharacterNav } from "./CharacterNav";
 
 type ExplorePageProps = {
   currentCharacter: number;
@@ -80,37 +80,12 @@ export default function ExplorePage({
 
   return (
     <div className="select-character">
-      <div className="heading flex justify-between">
-        <div className="flex gap-2">
-          <Button
-            className="profile rounded-full w-10 h-10 p-0 flex items-center justify-center bg-pink-200 hover:bg-pink-100"
-            variant="outline"
-            onClick={() => setPage(2)}
-          >
-            <span className="sr-only">Profile</span>
-          </Button>
-          <h1 className="text-3xl font-bold">{`${characters[currentCharacter].name}'s Explore Page`}</h1>
-        </div>
-        <div className="flex gap-2">
-          <Button
-            className="search-bar p-2 text-center"
-            variant="outline"
-            onClick={() => setPage(0)}
-          >
-            FYP
-          </Button>
-          <Button
-            onClick={() => {
-              setPage(0);
-              setCurrentCharacter(-1);
-            }}
-            variant="outline"
-          >
-            Switch Character
-          </Button>
-        </div>
-      </div>
-      <Separator className="my-4" />
+      <CharacterNav
+        characterName={characters[currentCharacter].name}
+        pageName={"Explore Page"}
+        setCurrentCharacter={setCurrentCharacter}
+        setPage={setPage}
+      />
 
       <div className="search-bar relative mb-4" ref={searchRef}>
         <div className="relative">
