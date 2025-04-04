@@ -93,7 +93,7 @@ export function TagStats({ currentCharacter }: TagStatsProps) {
         <Separator className="my-6" />
         <p className="pt-2">
           Interest is based off of the user interactions each tag has seen and
-          is tracked by the actions a user has taken on pots they've showed
+          is tracked by the actions a user has taken on posts they've showed
           interest in.
         </p>
       </CardContent>
