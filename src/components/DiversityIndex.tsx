@@ -1,4 +1,4 @@
-import { allTags, characters } from "@/models/Session";
+import { allTags, characters, tagCategories } from "@/models/Session";
 import { Card, CardContent } from "./ui/card";
 import { useEffect, useState } from "react";
 import { Separator } from "./ui/separator";
@@ -13,30 +13,48 @@ export function DiversityIndex({ currentCharacter }: DiversityIndexProps) {
     useState("bg-gray-200");
 
   useEffect(() => {
-    const sortedPreferences = [
-      ...characters[currentCharacter].interactedTags,
-    ].sort((a, b) => b.interactions - a.interactions);
+    const categoryInteractionCount: Record<string, number> = {};
 
-    // Calculate what percentage of all possible tags were interacted with
-    const percentageSeen = (sortedPreferences.length / allTags.length) * 100;
+    // look up category for a tag
+    const getCategory = (tag: string) =>
+      tagCategories.find((entry) => entry.tag === tag)?.category || "neutral";
 
-    // Calculate the spread between most and least interacted tags
-    const maxDiff = Math.max(1, sortedPreferences[0]?.interactions || 1); // Avoid division by zero
-    const minDiff =
-      sortedPreferences[sortedPreferences.length - 1]?.interactions || 0;
-    const differenceRatio = (maxDiff - minDiff) / maxDiff;
+    // aggregate interactions by category
+    characters[currentCharacter].interactedTags.forEach(
+      ({ tag, interactions }) => {
+        const category = getCategory(tag);
+        if (!categoryInteractionCount[category]) {
+          categoryInteractionCount[category] = 0;
+        }
+        categoryInteractionCount[category] += interactions;
+      }
+    );
 
-    // Combine metrics into a diversity score (0-1 range)
-    const spreadScore = 1 - differenceRatio; // Higher when differences are small
-    const coverageScore = percentageSeen / 100; // Normalize to 0-1
+    const totalInteractions = Object.values(categoryInteractionCount).reduce(
+      (sum, val) => sum + val,
+      0
+    );
 
-    // Weighted combination (adjust weights as needed)
-    const rawScore = spreadScore * 0.3 + coverageScore * 0.7;
+    if (totalInteractions === 0) {
+      setDiversityIndex("N/A");
+      setDiversityIndexColour("bg-gray-200");
+      return;
+    }
 
-    // Convert to 1-10 scale and round
+    // calculate balance and coverage
+    const maxCount = Math.max(...Object.values(categoryInteractionCount));
+    const balance = 1 - maxCount / totalInteractions;
+
+    const charCategoryCount = Object.keys(categoryInteractionCount).length;
+    const totalCategoryCount = new Set(tagCategories.map((t) => t.category))
+      .size;
+    const coverage = charCategoryCount / totalCategoryCount;
+    const rawDiversity = balance * 0.5 + coverage * 0.5;
+
+    // Convert to 1–10 scale
     const diversityScore = Math.min(
       10,
-      Math.max(1, Math.round(rawScore * 9 + 1))
+      Math.max(1, Math.round(rawDiversity * 9 + 1))
     );
 
     if (diversityScore <= 3) {
