@@ -2,7 +2,6 @@ import { characters } from "@/models/Session";
 import { TagStats } from "./TagStats";
 import { CharacterNav } from "./CharacterNav";
 import { DiversityIndex } from "./DiversityIndex";
-import { BiasIndex } from "./BiasIndex";
 import { InterestScores } from "./InterestScores";
 
 type ProfilePageProps = {
