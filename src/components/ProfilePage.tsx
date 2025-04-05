@@ -3,6 +3,7 @@ import { TagStats } from "./TagStats";
 import { CharacterNav } from "./CharacterNav";
 import { DiversityIndex } from "./DiversityIndex";
 import { BiasIndex } from "./BiasIndex";
+import { InterestScores } from "./InterestScores";
 
 type ProfilePageProps = {
   currentCharacter: number;
@@ -24,8 +25,9 @@ export default function ProfilePage({
         setPage={setPage}
       />
       <div className="content-wrapper flex flex-col gap-4">
-        <TagStats currentCharacter={currentCharacter} />
+        <InterestScores currentCharacter={currentCharacter} />
         <DiversityIndex currentCharacter={currentCharacter} />
+        <TagStats currentCharacter={currentCharacter} />
       </div>
     </div>
   );

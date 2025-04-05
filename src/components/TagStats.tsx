@@ -1,4 +1,4 @@
-import { characters } from "@/models/Session";
+import { allTags, characters } from "@/models/Session";
 import { Card, CardContent } from "./ui/card";
 import { Separator } from "./ui/separator";
 import { useEffect, useState } from "react";
@@ -9,84 +9,57 @@ type TagStatsProps = {
 
 type TagStat = {
   name: string;
-  colour: string;
-  percentage: string;
+  interactions: number;
 };
-
-const rainbowColours = [
-  "hsl(0, 90%, 80%)",
-  "hsl(30, 90%, 80%)",
-  "hsl(60, 90%, 80%)",
-  "hsl(90, 90%, 80%)",
-  "hsl(120, 90%, 80%)",
-  "hsl(150, 90%, 80%)",
-  "hsl(180, 90%, 80%)",
-  "hsl(210, 90%, 80%)",
-  "hsl(240, 90%, 80%)",
-  "hsl(270, 90%, 80%)",
-  "hsl(300, 90%, 80%)",
-];
 
 export function TagStats({ currentCharacter }: TagStatsProps) {
   const [tags, setTags] = useState<TagStat[]>([]);
 
   useEffect(() => {
-    const interactionCount = characters[currentCharacter].interactedTags.reduce(
-      (total, tag) => total + tag.interactions,
-      0
+    const interactedTagsMap = new Map(
+      characters[currentCharacter].interactedTags.map((t) => [
+        t.tag,
+        t.interactions,
+      ])
     );
 
-    setTags(
-      characters[currentCharacter].interactedTags.map((t, i) => {
-        const percent = ((t.interactions / interactionCount) * 100).toFixed(2);
-        return {
-          name: t.tag,
-          colour:
-            i < rainbowColours.length
-              ? rainbowColours[i]
-              : "hsl(270, 1.20%, 68.60%)",
-          percentage: percent,
-        } as TagStat;
-      })
-    );
-  }, [currentCharacter]);
+    const mergedTags = allTags.map((tag) => ({
+      name: tag,
+      interactions: interactedTagsMap.get(tag) || 0,
+    }));
+
+    const sortedTags = mergedTags.sort((a, b) => {
+      if (b.interactions !== a.interactions) {
+        return b.interactions - a.interactions;
+      }
+      return a.name.localeCompare(b.name);
+    });
+
+    setTags(sortedTags);
+  }, [currentCharacter, allTags]);
 
   return (
     <Card className="">
       <CardContent>
-        <h2 className="text-xl font-semibold mb-4">Interest Scores</h2>
+        <h2 className="text-xl font-semibold mb-4">Interactions</h2>
         {tags.length > 0 ? (
-          <div className="wrapper">
-            <div className="w-full bg-gray-200 rounded-full h-5 overflow-hidden border-2">
-              <div className="flex h-full">
-                {tags.map((lang) => (
-                  <div
-                    key={lang.name}
-                    className="h-full"
-                    style={{
-                      width: `${lang.percentage}%`,
-                      backgroundColor: lang.colour,
-                    }}
-                  ></div>
+          <div className="overflow-y-auto" style={{ maxHeight: "60vh" }}>
+            <table className="w-full">
+              <thead className="sticky top-0 bg-background">
+                <tr className="border-b">
+                  <th className="text-left py-2 px-4">Tag</th>
+                  <th className="text-right py-2 px-4">Interactions</th>
+                </tr>
+              </thead>
+              <tbody>
+                {tags.map((tag) => (
+                  <tr key={tag.name} className="border-b">
+                    <td className="py-2 px-4">{tag.name}</td>
+                    <td className="text-right py-2 px-4">{tag.interactions}</td>
+                  </tr>
                 ))}
-              </div>
-            </div>
-            <div className="flex flex-wrap justify-center gap-2 mt-3">
-              {tags.map((lang) => (
-                <div
-                  key={lang.name}
-                  className="flex items-center px-2 py-1 rounded text-xs font-semibold"
-                  style={{ backgroundColor: `${lang.colour}40` }}
-                >
-                  <div
-                    className="mr-1 w-3 h-3 rounded-full border border-gray-300"
-                    style={{ backgroundColor: lang.colour }}
-                  />
-                  <span className="mr-1">{lang.name}</span>
-                  <span>{lang.percentage}%</span>
-                </div>
-              ))}
-            </div>
+              </tbody>
+            </table>
           </div>
         ) : (
           <div>
@@ -94,11 +67,10 @@ export function TagStats({ currentCharacter }: TagStatsProps) {
             preference yet.
           </div>
         )}
-        <Separator className="my-6" />
+        <Separator className="my-4" />
         <p className="pt-2">
-          Interest is based off of the user interactions each tag has seen and
-          is tracked by the actions a user has taken on posts they've showed
-          interest in.
+          Interactions with the tag are measured by various actions a user has
+          taken on content with the associated tag.
         </p>
       </CardContent>
     </Card>
