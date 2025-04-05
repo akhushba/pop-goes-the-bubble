@@ -27,7 +27,6 @@ export default function ProfilePage({
       <div className="content-wrapper flex flex-col gap-4">
         <InterestScores currentCharacter={currentCharacter} />
         <DiversityIndex currentCharacter={currentCharacter} />
-        <BiasIndex currentCharacter={currentCharacter} />
         <TagStats currentCharacter={currentCharacter} />
       </div>
     </div>
