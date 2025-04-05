@@ -1,4 +1,4 @@
-import { allTags, characters, tagCategories } from "@/models/Session";
+import { characters, tagCategories } from "@/models/Session";
 import { Card, CardContent } from "./ui/card";
 import { useEffect, useState } from "react";
 import { Separator } from "./ui/separator";
