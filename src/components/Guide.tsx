@@ -65,15 +65,27 @@ const sections = [
                 tags/topics.
               </li>
               <li>
-                {/* TODO! */}
                 Diversity score: how broad or varied your engagement is across
-                different content types. Calculated by: ...
-              </li>
-              <li>
-                {/* TODO! */}
-                Bias index: a combination of interest + diversity that reflects
-                how “narrow” or one-sided your content exposure has become.
-                Calculated by: ...
+                different content categories.
+                <p className="mt-1">
+                  We calculate this using two factors:
+                  <ul className="list-disc pl-6 mt-1 space-y-1">
+                    <li>
+                      Balance: We check how evenly your interactions are spread
+                      across categories. If one category dominates (e.g., only
+                      Conservative), the balance score drops.
+                    </li>
+                    <li>
+                      Coverage: We also track how many different categories
+                      you’ve interacted with overall. Interacting with more
+                      types (e.g., Tech, Art, Liberal, Environment) increases
+                      this score.
+                    </li>
+                  </ul>
+                  These are combined equally and converted into a 1–10 score. A
+                  higher score means you’ve engaged more evenly and widely
+                  across various types of content.
+                </p>
               </li>
             </ul>
             <p className="mt-1">
