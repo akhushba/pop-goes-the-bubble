@@ -13,7 +13,7 @@ export default function CharacterSelector({
     <div className="select-character">
       <h1 className="text-3xl font-bold">Pick a Character</h1>
       <Separator className="my-4" />
-      <div className="grid grid-cols-2 gap-4">
+      <div className="grid grid-cols-3 gap-4">
         {characters.map((character, index) => (
           <Card
             key={index}
@@ -24,18 +24,6 @@ export default function CharacterSelector({
               <div>
                 <h2 className="text-xl font-bold">{character.name}</h2>
                 <p className="text-sm text-gray-600">{character.description}</p>
-              </div>
-              <div className="mt-2">
-                <h3 className="text-sm font-semibold">Tags:</h3>
-                <ul className="text-xs text-gray-500">
-                  {character.interactedTags
-                    .sort((a, b) => b.interactions - a.interactions)
-                    .map((tag, i) => (
-                      <li key={i}>
-                        {tag.tag} ({tag.interactions})
-                      </li>
-                    ))}
-                </ul>
               </div>
             </CardContent>
           </Card>
